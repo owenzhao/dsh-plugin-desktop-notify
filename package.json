@@ -28,5 +28,13 @@
       "platform": "web"
     }
   },
-  "author": "Zhao Xin"
+  "author": "Zhao Xin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owenzhao/dsh-plugin-desktop-notify.git"
+  },
+  "homepage": "https://github.com/owenzhao/dsh-plugin-desktop-notify#readme",
+  "bugs": {
+    "url": "https://github.com/owenzhao/dsh-plugin-desktop-notify/issues"
+  }
 }
