@@ -15,9 +15,9 @@ English | [简体中文](./README.zh.md)
 
 | Moment | Detected from | Notification |
 |---|---|---|
-| A turn finishes | `turn/end` in the Session event stream | title = Session title, body `回合结束` |
-| The agent asks a question | a `tool/call` of `ask_user_question` | body `在等你回答` |
-| An approval is waiting | `approval/asked` in the Session event stream | body `需要你批准` |
+| A turn finishes | `turn/end` in the Session event stream | title = Session title, body = the first line of the reply |
+| The agent asks a question | a `tool/call` of `ask_user_question` | body = `在等你回答：<the question>` |
+| An approval is waiting | `approval/asked` in the Session event stream | body = `需要批准：<tool name>` |
 | Plugin first activated | once per browser profile | a "notifications enabled" hello |
 
 - Clicking a notification opens the Session that raised it.
