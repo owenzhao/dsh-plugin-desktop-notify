@@ -72,13 +72,18 @@ serves the browser half from an enabled row.
 
 ## Configuration
 
-Configuration lives on the Loader row. The host half reads it and forwards it to the
-browser in the same response the page polls, because the client boot graph carries no
-per-row config.
+Settings → Plugins → **桌面通知** (the plugin registers its own tab there):
 
-| Key | Default | Meaning |
+| Switch | Default | Meaning |
 |---|---|---|
-| `notifyInForeground` | `true` | Also notify while the app window has focus. Set to `false` to stay quiet when you are already looking at the Session that just finished. |
+| 启用通知 | on | Turn every notification off without unloading the plugin. |
+| 前台也提醒 | on | Notify even while the app window has focus. Turn it off to stay quiet when you are already looking at the Session that just finished. |
+
+The switches write `$DSH_HOME/state/desktop-notify.json` and take effect on the next
+poll — no restart needed.
+
+The Loader row still supplies the **default** for `notifyInForeground`; a value saved
+from the settings tab wins over it:
 
 ```yaml
 - insert:
@@ -87,10 +92,6 @@ per-row config.
       config:
         notifyInForeground: false
 ```
-
-With `notifyInForeground: false`, a turn that ends in the Session you are currently
-viewing, while the app has focus, is skipped. Every other case — another Session,
-another app — still notifies.
 
 ## How it works
 
