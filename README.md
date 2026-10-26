@@ -21,8 +21,10 @@ English | [简体中文](./README.zh.md)
 | Plugin first activated | once per browser profile | a "notifications enabled" hello |
 
 - Clicking a notification opens the Session that raised it.
-- If your platform only activates the app on click (Electron on macOS does this), the
-  app coming to the foreground is treated as the click and the same Session is opened.
+- If the platform activates the app without delivering the click (Electron on macOS
+  sometimes does), that activation counts as a click only when the notification was
+  dismissed a moment earlier. Coming back to the app any other way — Cmd+Tab, the Dock,
+  the menu bar — leaves your current view alone.
 - Subagent Sessions and blank Sessions are skipped, so a fan-out does not spam you.
 
 ## Requirements

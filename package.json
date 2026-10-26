@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-desktop-notify",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Desktop notifications for DeepSeek Harness: tells you when a turn finishes, when the agent asks a question, or when an approval is waiting.",
   "type": "module",
   "main": "lib/index.js",
